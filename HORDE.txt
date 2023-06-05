@@ -1,0 +1,126 @@
+from PyQt5.QtCore import *
+from PyQt5.QtWidgets import (QApplication, QInputDialog, QButtonGroup, QWidget, QHBoxLayout, QVBoxLayout, QGroupBox, QRadioButton, QPushButton, QLabel, QListWidget, QTextEdit, QLineEdit, QMessageBox)
+import json
+from PyQt5.QtGui import *
+app = QApplication([])
+window=QWidget()
+window.setWindowTitle('книга битв')
+okno = QLabel('время наслать орду бесов и захватить чужие земли!')
+nad = QLabel('СПИСОК ЦЕЛЕЙ')
+btn1 = QPushButton('Пустынное царство')
+btn2 = QPushButton('Грибной городок')
+btn3 = QPushButton('Замок магов')
+btn4 = QPushButton('Жуткий остров')
+RED_BUTTON = QPushButton('**наслать орду**')
+RED_BUTTON.setIcon(QIcon('RED_BUTTON.PNG'))
+RED_BUTTON.hide()
+RED_BUTTON.setIconSize(QSize(50,50))
+btn3.setIcon(QIcon('tower.png'))
+btn3.setIconSize(QSize(40,45))
+btn2.setIcon(QIcon('129816.png'))
+btn2.setIconSize(QSize(40,45))
+btn4.setIcon(QIcon('299-2990352_island-icon-png.png'))
+btn4.setIconSize(QSize(60,45))
+btn1.setIcon(QIcon('5137211.png'))
+btn1.setIconSize(QSize(60,45))
+
+spis = QListWidget()
+spis2 = QListWidget()
+teg = QLineEdit()
+layout1os = QHBoxLayout()
+layout2 = QHBoxLayout()
+layout3 = QHBoxLayout()
+layout4 = QHBoxLayout()
+layout5 = QHBoxLayout()
+layouty1 = QVBoxLayout()
+layouty2 = QVBoxLayout()
+layouty2.addWidget(nad)
+layouty1.addWidget(okno)
+
+layout1os.addLayout(layouty1)
+layout1os.addLayout(layouty2)
+layouty2.addLayout(layout2)
+layouty2.addLayout(layout3)
+layouty2.addLayout(layout4)
+layouty2.addLayout(layout5)
+layout2.addWidget(btn4)
+layout2.addWidget(btn1)
+layout2.addWidget(btn2)
+layout2.addWidget(btn3)
+layouty2.addWidget(nad)
+layout5.addWidget(RED_BUTTON)
+
+window.setLayout(layout1os)
+notes = {}
+def Mushroom():
+    note_name, ok = QInputDialog.getText(window, 'КОДЫ',"ВВОДИ КОД")
+    if ok and note_name == 'F4234E6700JH':
+        msg = QMessageBox()
+        msg.setText('можно начинать!')
+        msg.exec_()
+        RED_BUTTON.show()
+    else:
+        print('НЕ А')
+def Desert():
+    note_name, ok = QInputDialog.getText(window, 'КОДЫ',"ВВОДИ КОД")
+    if ok and note_name == 'K74GH99CMG44ML':
+        msg = QMessageBox()
+        msg.setText('можно начинать!')
+        msg.exec_()
+        RED_BUTTON.show()
+    else:
+        print('НЕ А')
+def Castle():
+    note_name, ok = QInputDialog.getText(window, 'КОДЫ',"ВВОДИ КОД")
+    if ok and note_name == 'FD23T654YY12842FN':
+        msg = QMessageBox()
+        msg.setText('можно начинать!')
+        msg.exec_()
+        RED_BUTTON.show()
+    else:
+        print('НЕ А')
+def Island():
+    note_name, ok = QInputDialog.getText(window, 'КОДЫ',"ВВОДИ КОД")
+    if ok and note_name == 'FD23T654YY12842FN':
+        msg = QMessageBox()
+        msg.setText('можно начинать!')
+        msg.exec_()
+        RED_BUTTON.show()
+    else:
+        print('НЕ А')
+  
+
+
+
+
+
+
+
+
+
+
+
+
+btn1.clicked.connect(Desert)
+btn2.clicked.connect(Mushroom)
+btn3.clicked.connect(Castle)
+btn4.clicked.connect(Island)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.show()
+app.exec()
